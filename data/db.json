@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "siteName": "Tilo Live",
+    "adminPassword": "admin123",
+    "smtp": {
+      "host": "",
+      "port": 587,
+      "secure": false,
+      "user": "",
+      "pass": ""
+    }
+  },
+  "messages": []
+}
