@@ -1,0 +1,76 @@
+{
+  "site": {
+    "name": "Tilo Live",
+    "themeColor": "sky-blue",
+    "domain": "tilolive.in"
+  },
+  "home": {
+    "heroTitle": "Join TiloLive: The Future of Live Streaming",
+    "heroSubtitle": "Start earning weekly payouts as a Host or Agent. Join the fastest-growing community today.",
+    "sections": [
+      {
+        "title": "Why Choose Tilo Live?",
+        "features": [
+          {
+            "icon": "💰",
+            "title": "Weekly Payments",
+            "description": "Get paid every week for your hard work. No delays, no complications."
+          },
+          {
+            "icon": "🛡️",
+            "title": "Safe Environment",
+            "description": "We ensure a secure and professional platform for all our hosts and agents."
+          },
+          {
+            "icon": "🤝",
+            "title": "24/7 Support",
+            "description": "Our dedicated team is always here to help you succeed."
+          }
+        ]
+      }
+    ]
+  },
+  "rules": {
+    "sections": [
+      {
+        "title": "General Guidelines",
+        "content": ["Follow all platform rules and maintain professional conduct at all times."],
+        "items": [
+          "Respect all users and staff members",
+          "No inappropriate content or behavior",
+          "Maintain a positive and welcoming environment"
+        ]
+      },
+      {
+        "title": "Host Requirements",
+        "content": ["All hosts must meet the following requirements to participate on Tilo Live."],
+        "items": [
+          "Must be 18 years or older",
+          "Valid identification required",
+          "Consistent streaming schedule recommended",
+          "Professional appearance and conduct"
+        ]
+      }
+    ]
+  },
+  "salary": {
+    "title": "Salary Structure",
+    "description": "Earn competitive salaries based on your performance. The more you earn, the more you keep.",
+    "tiers": [
+      { "diamonds": "0 - 50,000", "salary": "$500", "level": "Bronze" },
+      { "diamonds": "50,001 - 100,000", "salary": "$1,200", "level": "Silver" },
+      { "diamonds": "100,001 - 200,000", "salary": "$2,500", "level": "Gold" },
+      { "diamonds": "200,001 - 500,000", "salary": "$6,000", "level": "Platinum" },
+      { "diamonds": "500,001+", "salary": "$15,000+", "level": "Diamond" }
+    ]
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team. We're here to help you succeed.",
+    "info": [
+      { "label": "Email", "value": "support@tilolive.in" },
+      { "label": "Response Time", "value": "Within 24 hours" },
+      { "label": "Available", "value": "24/7" }
+    ]
+  }
+}
