@@ -1,7 +1,7 @@
 {
   "settings": {
     "siteName": "Tilo Live",
-    "adminPassword": "admin123",
+    "adminPassword": "CHANGE_ME_ON_FIRST_USE",
     "smtp": {
       "host": "",
       "port": 587,

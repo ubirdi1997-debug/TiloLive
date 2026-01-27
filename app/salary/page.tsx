@@ -15,9 +15,10 @@ export default function SalaryPage() {
       return;
     }
 
-    // Simple conversion rate (adjust as needed)
-    const conversionRate = 0.01; // $0.01 per diamond
-    const usd = (diamondNum * conversionRate).toFixed(2);
+    // Diamond to USD conversion rate - configurable
+    // TODO: Move to admin settings for easier management
+    const DIAMOND_USD_RATE = 0.01; // $0.01 per diamond
+    const usd = (diamondNum * DIAMOND_USD_RATE).toFixed(2);
     setCalculatedUSD(usd);
   };
 

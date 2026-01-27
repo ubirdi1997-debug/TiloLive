@@ -39,7 +39,7 @@ export async function getDb() {
     db = new Low(adapter, {
       settings: {
         siteName: 'Tilo Live',
-        adminPassword: 'admin123',
+        adminPassword: process.env.ADMIN_PASSWORD || 'CHANGE_ME_' + Math.random().toString(36).substring(7),
         smtp: {
           host: '',
           port: 587,

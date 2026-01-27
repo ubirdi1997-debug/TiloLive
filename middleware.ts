@@ -1,7 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+  // Require explicit password configuration for security
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  
+  if (!adminPassword) {
+    return new NextResponse('Admin panel not configured. Set ADMIN_PASSWORD environment variable.', {
+      status: 503,
+    });
+  }
+  
   const authHeader = request.headers.get('authorization');
 
   // Check for basic auth
