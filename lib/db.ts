@@ -1,6 +1,7 @@
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
 import { join } from 'path';
+import { existsSync, mkdirSync } from 'fs';
 
 export interface ContactSubmission {
   id: string;
@@ -45,7 +46,14 @@ export async function getDb() {
     return dbInstance;
   }
 
-  const dbPath = join(process.cwd(), 'data', 'db.json');
+  const dataDir = join(process.cwd(), 'data');
+  
+  // Ensure data directory exists
+  if (!existsSync(dataDir)) {
+    mkdirSync(dataDir, { recursive: true });
+  }
+
+  const dbPath = join(dataDir, 'db.json');
   const adapter = new JSONFile<DatabaseData>(dbPath);
   dbInstance = new Low<DatabaseData>(adapter);
   await dbInstance.read();

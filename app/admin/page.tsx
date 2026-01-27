@@ -2,6 +2,10 @@
 
 import { useState, useEffect } from 'react';
 
+// TODO: Add authentication before production deployment
+// This admin dashboard should be protected with proper authentication
+// to prevent unauthorized access to sensitive contact data and SMTP settings
+
 interface ContactSubmission {
   id: string;
   name: string;
