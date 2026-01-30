@@ -190,7 +190,7 @@ const Home = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20a%20Host%20at%20Tilo%20Live`}
+                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20a%20Host%20at%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 text-center group"
@@ -202,7 +202,7 @@ const Home = () => {
                   </svg>
                 </a>
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20an%20Agent%20at%20Tilo%20Live`}
+                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20an%20Agent%20at%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline inline-flex items-center justify-center gap-2 text-center group"
@@ -266,7 +266,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
-              About <span className="text-gradient">Tilo Live</span>
+              About <span className="text-gradient">Tilo Agency</span>
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Experience live streaming like never before
@@ -277,14 +277,14 @@ const Home = () => {
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-gray-900">Your Gateway to Live Entertainment</h3>
               <p className="text-gray-600 leading-relaxed">
-                Tilo Live App is a live streaming and social interaction platform built for creators, agencies, and streamers to grow and earn together. The app combines live streaming, video chat, text messaging, and virtual gifting into one smooth and engaging experience.
+                Tilo Agency is a live streaming and social interaction platform built for creators, agencies, and streamers to grow and earn together. The app combines live streaming, video chat, text messaging, and virtual gifting into one smooth and engaging experience.
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Join thousands of hosts and agents who are earning through our innovative platform. Whether you're a content creator, influencer, or someone looking to monetize your social presence, Tilo Live provides all the tools you need to succeed.
+                Join thousands of hosts and agents who are earning through our innovative platform. Whether you're a content creator, influencer, or someone looking to monetize your social presence, Tilo Agency provides all the tools you need to succeed.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Tell%20me%20more%20about%20Tilo%20Live`}
+                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Tell%20me%20more%20about%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 text-center"
