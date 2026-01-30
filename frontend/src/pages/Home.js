@@ -563,40 +563,63 @@ const Home = () => {
       </section>
 
       {/* Salary Section */}
-      <section id="salary" className="section-padding bg-white" data-testid="salary-section">
+      <section id="salary" className="section-padding bg-gradient-to-b from-white via-orange-50/20 to-white" data-testid="salary-section">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
-              Our <span className="text-gradient">Salary Structure</span>
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-bold uppercase tracking-wider">💰 Earnings</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-black mb-6 text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              Our <span className="text-gradient relative inline-block">
+                Salary Structure
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
+                  <path d="M2 6C50 2 150 2 198 6" stroke="url(#gradient2)" strokeWidth="2" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f97316"/>
+                      <stop offset="100%" stopColor="#ea580c"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
             </h2>
-            <p className="text-lg text-gray-600">Our salary structure is designed to reward Hosts and Agents fairly based on Diamonds, Calls, and Agent performance.</p>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">Our salary structure is designed to reward Hosts and Agents fairly based on Diamonds, Calls, and Agent performance.</p>
           </div>
 
           {/* Diamonds Salary Table */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <Gem className="text-sky-500" size={28} />
-              Diamond Salary
-            </h3>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-sky-500">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Diamond</th>
-                    <th className="text-center py-3 px-4 font-semibold text-gray-900">Diamond Salary (USD)</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900">Host Bonus (USD)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {diamondSalary.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-sky-50 transition-colors">
-                      <td className="py-3 px-4 text-gray-700">{row.diamond}</td>
-                      <td className="text-center py-3 px-4 font-semibold text-sky-600">${row.salary}</td>
-                      <td className="text-right py-3 px-4 text-gray-700">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative">
+                <div className="absolute inset-0 bg-sky-400 rounded-xl blur-md opacity-40"></div>
+                <div className="relative bg-gradient-to-br from-sky-400 to-sky-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg">
+                  <Gem className="text-white" size={24} />
+                </div>
+              </div>
+              <h3 className="text-3xl font-black text-gray-900">Diamond Salary</h3>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-sky-400 to-blue-500 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border-2 border-sky-100 overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600">
+                        <th className="text-left py-4 px-6 font-bold text-white text-sm tracking-wide">DIAMOND</th>
+                        <th className="text-center py-4 px-6 font-bold text-white text-sm tracking-wide">DIAMOND SALARY (USD)</th>
+                        <th className="text-right py-4 px-6 font-bold text-white text-sm tracking-wide">HOST BONUS (USD)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-gradient-to-b from-sky-50/30 to-white">
+                      {diamondSalary.map((row, index) => (
+                        <tr key={index} className="border-t-2 border-sky-100 hover:bg-sky-100/60 transition-all duration-200 group/row">
+                          <td className="py-4 px-6 text-gray-800 font-bold">{row.diamond}</td>
+                          <td className="text-center py-4 px-6 font-black text-lg text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600 group-hover/row:from-sky-500 group-hover/row:to-blue-500">${row.salary}</td>
+                          <td className="text-right py-4 px-6 text-gray-700 font-semibold">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               <div className="mt-4 space-y-2 text-sm text-gray-600">
                 <p>• Maximum Rate: 4000 Diamonds = 1 USD</p>
                 <p>• Host salary = Diamond salary + Host Bonus + Fixed salary</p>
