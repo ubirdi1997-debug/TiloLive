@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "siteTitle": "Tilo Live",
+    "heroHeadline": "Join Tilo Live and Start Earning Today",
+    "heroSubheadline": "Become a Host or Agent and unlock flexible payouts, exclusive rewards, and professional growth opportunities.",
+    "primaryColor": "#667eea",
+    "secondaryColor": "#764ba2",
+    "contactEmail": "info@tilolive.in",
+    "contactPhone": "+91 82669 41716",
+    "companyName": "Tilo Live",
+    "whatsappNumber": "+918266941716",
+    "socialMedia": {
+      "facebook": "",
+      "instagram": "",
+      "twitter": "",
+      "youtube": ""
+    },
+    "headerLogo": null,
+    "footerLogo": null
+  },
+  "messages": [],
+  "newsletters": []
+}
