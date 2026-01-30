@@ -218,39 +218,39 @@ const Home = () => {
             
             {/* Salary Sheet Table - Modern Design */}
             <div className="relative animate-float">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
+              <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-orange-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center">
                     <Gem className="text-white" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Outfit, sans-serif' }}>
-                      Official Salary Sheet
+                    <h3 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                      Commission Structure
                     </h3>
-                    <p className="text-sm text-gray-500">Transparent earnings structure</p>
+                    <p className="text-sm text-gray-500">Transparent agent earnings</p>
                   </div>
                 </div>
-                <div className="overflow-hidden rounded-2xl border border-gray-100">
+                <div className="overflow-hidden rounded-2xl border border-orange-100">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-gradient-to-r from-purple-600 to-indigo-600">
+                      <tr className="bg-gradient-to-r from-orange-500 to-red-500">
                         <th className="text-left py-4 px-4 font-semibold text-white text-sm">Coins Target</th>
-                        <th className="text-right py-4 px-4 font-semibold text-white text-sm">Payout (INR)</th>
+                        <th className="text-right py-4 px-4 font-semibold text-white text-sm">Agency Earning</th>
                       </tr>
                     </thead>
                     <tbody>
                       {salarySheet.slice(0, 5).map((row, index) => (
-                        <tr key={index} className="border-t border-gray-100 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 transition-all duration-300">
+                        <tr key={index} className="border-t border-orange-50 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 transition-all duration-300">
                           <td className="py-4 px-4 text-gray-700 font-medium">{row.coins.toLocaleString()}</td>
-                          <td className="text-right py-4 px-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">₹ {row.rupees.toLocaleString()}</td>
+                          <td className="text-right py-4 px-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">₹ {Math.round(row.rupees * 0.15).toLocaleString()}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <a href="#salary" className="mt-4 text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-2 group">
-                  View complete salary structure
+                <a href="#salary" className="mt-4 text-sm font-semibold text-orange-600 hover:text-orange-700 flex items-center gap-2 group">
+                  View complete commission plan
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
