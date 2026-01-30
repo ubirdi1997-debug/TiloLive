@@ -178,12 +178,12 @@ const Home = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200">
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-                <span className="text-sm font-semibold text-purple-700">Welcome to Tilo Live</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full border border-orange-200">
+                <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                <span className="text-sm font-semibold text-orange-700">Welcome to Tilo Agency</span>
               </div>
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }} data-testid="hero-headline">
-                Join Tilo Live and <span className="text-gradient">Start Earning</span> Today
+                Join Tilo Agency and <span className="text-gradient">Start Earning</span> Today
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed" data-testid="hero-subheadline">
                 Become a Host or Agent and unlock flexible payouts, exclusive rewards, and professional growth opportunities.
