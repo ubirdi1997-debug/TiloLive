@@ -429,7 +429,7 @@ const Home = () => {
             <div className="space-y-6 order-1 md:order-2">
               <h3 className="text-2xl font-bold text-gray-900">Become a Host & Start Earning</h3>
               <p className="text-gray-600 leading-relaxed">
-                Join Tilo Live as a streamer and connect with audiences worldwide. Whether you want to showcase your talent, share your daily life, or build a community, Tilo provides the perfect platform to monetize your content.
+                Join Tilo Agency as a streamer and connect with audiences worldwide. Whether you want to showcase your talent, share your daily life, or build a community, Tilo provides the perfect platform to monetize your content.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
@@ -462,7 +462,7 @@ const Home = () => {
                 </div>
               </div>
               <a
-                href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=I%20want%20to%20join%20as%20Tilo%20Streamer`}
+                href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=I%20want%20to%20join%20as%20Tilo%20Streamer%20at%20Tilo%20Agency`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex items-center justify-center gap-2"
