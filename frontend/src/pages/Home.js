@@ -707,13 +707,23 @@ const Home = () => {
                           <td className="py-4 px-6 text-gray-800 font-bold">{row.total}</td>
                           <td className="text-center py-4 px-6 font-black text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 group-hover/row:from-orange-500 group-hover/row:to-red-500">{row.share}</td>
                           <td className="text-right py-4 px-6 text-gray-700 font-semibold">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="mt-4 space-y-2 text-sm text-gray-600">
-                <p>• Agent Salary = Agent commission + Agent Bonus</p>
-                <p>• If an agency's total income does not meet $20 for a week, it will not be paid but can be accumulated to the next week</p>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-6 p-6 bg-gradient-to-r from-orange-50 to-red-50 rounded-2xl border-2 border-orange-200">
+                  <div className="space-y-2 text-sm text-gray-700 font-medium">
+                    <p className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      Agent Salary = Agent commission + Agent Bonus
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                      If an agency's total income does not meet $20 for a week, it will not be paid but can be accumulated to the next week
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
