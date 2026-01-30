@@ -620,34 +620,55 @@ const Home = () => {
                     </tbody>
                   </table>
                 </div>
-              <div className="mt-4 space-y-2 text-sm text-gray-600">
-                <p>• Maximum Rate: 4000 Diamonds = 1 USD</p>
-                <p>• Host salary = Diamond salary + Host Bonus + Fixed salary</p>
-                <p>• Diamonds achieving 20k will be settled</p>
+                <div className="mt-6 p-6 bg-gradient-to-r from-sky-50 to-blue-50 rounded-2xl border-2 border-sky-200">
+                  <div className="space-y-2 text-sm text-gray-700 font-medium">
+                    <p className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Maximum Rate: 4000 Diamonds = 1 USD
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Host salary = Diamond salary + Host Bonus + Fixed salary
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-sky-500 rounded-full"></span>
+                      Diamonds achieving 20k will be settled
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Fixed Salary Table */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <Clock className="text-cyan-500" size={28} />
-              Fixed Salary
-            </h3>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-cyan-500">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Private Call Duration/Week</th>
-                    <th className="text-center py-3 px-4 font-semibold text-gray-900">Average Call Duration</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900">Fixed Salary (USD)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {fixedSalary.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-cyan-50 transition-colors">
-                      <td className="py-3 px-4 text-gray-700">{row.duration}</td>
-                      <td className="text-center py-3 px-4 text-gray-700">{row.avgCall}</td>
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative">
+                <div className="absolute inset-0 bg-cyan-400 rounded-xl blur-md opacity-40"></div>
+                <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg">
+                  <Clock className="text-white" size={24} />
+                </div>
+              </div>
+              <h3 className="text-3xl font-black text-gray-900">Fixed Salary</h3>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border-2 border-cyan-100 overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-cyan-500 via-cyan-600 to-teal-600">
+                        <th className="text-left py-4 px-6 font-bold text-white text-sm tracking-wide">PRIVATE CALL DURATION/WEEK</th>
+                        <th className="text-center py-4 px-6 font-bold text-white text-sm tracking-wide">AVERAGE CALL DURATION</th>
+                        <th className="text-right py-4 px-6 font-bold text-white text-sm tracking-wide">FIXED SALARY (USD)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-gradient-to-b from-cyan-50/30 to-white">
+                      {fixedSalary.map((row, index) => (
+                        <tr key={index} className="border-t-2 border-cyan-100 hover:bg-cyan-100/60 transition-all duration-200 group/row">
+                          <td className="py-4 px-6 text-gray-800 font-bold">{row.duration}</td>
+                          <td className="text-center py-4 px-6 text-gray-700 font-semibold">{row.avgCall}</td>
+                          <td className="text-right py-4 px-6 font-black text-lg text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 group-hover/row:from-cyan-500 group-hover/row:to-teal-500">${row.salary}</td>
                       <td className="text-right py-3 px-4 font-semibold text-cyan-600">${row.salary}</td>
                     </tr>
                   ))}
