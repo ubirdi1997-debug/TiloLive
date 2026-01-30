@@ -669,35 +669,44 @@ const Home = () => {
                           <td className="py-4 px-6 text-gray-800 font-bold">{row.duration}</td>
                           <td className="text-center py-4 px-6 text-gray-700 font-semibold">{row.avgCall}</td>
                           <td className="text-right py-4 px-6 font-black text-lg text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-teal-600 group-hover/row:from-cyan-500 group-hover/row:to-teal-500">${row.salary}</td>
-                      <td className="text-right py-3 px-4 font-semibold text-cyan-600">${row.salary}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Agency Salary Table */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <TrendingUp className="text-orange-500" size={28} />
-              Agency Salary
-            </h3>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b-2 border-orange-500">
-                    <th className="text-left py-3 px-4 font-semibold text-gray-900">Host Total Salary (USD)</th>
-                    <th className="text-center py-3 px-4 font-semibold text-gray-900">Agent Share</th>
-                    <th className="text-right py-3 px-4 font-semibold text-gray-900">Agent Bonus (USD)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {agencySalary.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-orange-50 transition-colors">
-                      <td className="py-3 px-4 text-gray-700">{row.total}</td>
-                      <td className="text-center py-3 px-4 font-semibold text-orange-600">{row.share}</td>
-                      <td className="text-right py-3 px-4 text-gray-700">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="relative">
+                <div className="absolute inset-0 bg-orange-400 rounded-xl blur-md opacity-40"></div>
+                <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 w-12 h-12 rounded-xl flex items-center justify-center shadow-lg">
+                  <TrendingUp className="text-white" size={24} />
+                </div>
+              </div>
+              <h3 className="text-3xl font-black text-gray-900">Agency Salary</h3>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 to-red-500 rounded-3xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border-2 border-orange-100 overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-600">
+                        <th className="text-left py-4 px-6 font-bold text-white text-sm tracking-wide">HOST TOTAL SALARY (USD)</th>
+                        <th className="text-center py-4 px-6 font-bold text-white text-sm tracking-wide">AGENT SHARE</th>
+                        <th className="text-right py-4 px-6 font-bold text-white text-sm tracking-wide">AGENT BONUS (USD)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="bg-gradient-to-b from-orange-50/30 to-white">
+                      {agencySalary.map((row, index) => (
+                        <tr key={index} className="border-t-2 border-orange-100 hover:bg-orange-100/60 transition-all duration-200 group/row">
+                          <td className="py-4 px-6 text-gray-800 font-bold">{row.total}</td>
+                          <td className="text-center py-4 px-6 font-black text-lg text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 group-hover/row:from-orange-500 group-hover/row:to-red-500">{row.share}</td>
+                          <td className="text-right py-4 px-6 text-gray-700 font-semibold">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
                     </tr>
                   ))}
                 </tbody>
