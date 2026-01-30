@@ -285,42 +285,67 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="section-padding bg-white" data-testid="about-section">
+      <section id="about" className="section-padding bg-gradient-to-b from-white to-orange-50/30" data-testid="about-section">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
-              About <span className="text-gradient">Tilo Agency</span>
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-bold uppercase tracking-wider">About Us</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-black mb-6 text-gray-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              About <span className="text-gradient relative">
+                Tilo Agency
+                <svg className="absolute -bottom-1 left-0 w-full" height="8" viewBox="0 0 200 8" fill="none">
+                  <path d="M2 6C50 2 150 2 198 6" stroke="url(#gradient)" strokeWidth="2" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f97316"/>
+                      <stop offset="100%" stopColor="#ea580c"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-medium">
               Experience live streaming like never before
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-gray-900">Your Gateway to Live Entertainment</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Tilo Agency is a live streaming and social interaction platform built for creators, agencies, and streamers to grow and earn together. The app combines live streaming, video chat, text messaging, and virtual gifting into one smooth and engaging experience.
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                Join thousands of hosts and agents who are earning through our innovative platform. Whether you're a content creator, influencer, or someone looking to monetize your social presence, Tilo Agency provides all the tools you need to succeed.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-1 h-12 bg-gradient-to-b from-orange-500 to-orange-600 rounded-full"></div>
+                  <h3 className="text-3xl font-black text-gray-900">Your Gateway to Live Entertainment</h3>
+                </div>
+              </div>
+              <div className="space-y-6 pl-6 border-l-4 border-orange-200">
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  Tilo Agency is a live streaming and social interaction platform built for creators, agencies, and streamers to grow and earn together. The app combines live streaming, video chat, text messaging, and virtual gifting into one smooth and engaging experience.
+                </p>
+                <p className="text-gray-700 leading-relaxed text-lg">
+                  Join thousands of hosts and agents who are earning through our innovative platform. Whether you're a content creator, influencer, or someone looking to monetize your social presence, Tilo Agency provides all the tools you need to succeed.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Tell%20me%20more%20about%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 text-center"
+                  className="group inline-flex items-center justify-center gap-3 px-8 py-4 font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:-translate-y-1"
                 >
-                  Learn More
+                  <span>Learn More</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
                 </a>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-sky-100 to-cyan-100 rounded-3xl p-8 shadow-2xl">
+              <div className="absolute -inset-4 bg-gradient-to-r from-orange-400 to-orange-500 rounded-3xl blur-3xl opacity-20"></div>
+              <div className="relative bg-gradient-to-br from-orange-50 via-orange-100/50 to-orange-50 rounded-3xl p-10 shadow-2xl border-2 border-orange-200">
                 <div className="grid grid-cols-2 gap-6">
-                  <div className="bg-white rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-sky-500 mb-2">10K+</div>
+                  <div className="group bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-orange-100 hover:border-orange-300">
+                    <div className="text-4xl font-black bg-gradient-to-br from-orange-500 to-orange-600 bg-clip-text text-transparent mb-2">10K+</div>
                     <p className="text-gray-600 text-sm">Active Hosts</p>
                   </div>
                   <div className="bg-white rounded-xl p-6 text-center">
