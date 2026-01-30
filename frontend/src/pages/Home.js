@@ -129,13 +129,13 @@ const Home = () => {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1">
-              <a href="#home" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">Home</a>
-              <a href="#about" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">About</a>
-              <a href="#tilo-agency" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">Tilo Agency</a>
-              <a href="#tilo-streamer" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">Tilo Streamer</a>
-              <a href="#salary" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">Salary</a>
-              <a href="#rules" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-xl transition-all duration-300">Rules</a>
-              <a href="#contact" className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-xl transition-all duration-300 shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40">Contact</a>
+              <a href="#home" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">Home</a>
+              <a href="#about" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">About</a>
+              <a href="#tilo-agency" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">Tilo Agency</a>
+              <a href="#tilo-streamer" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">Tilo Streamer</a>
+              <a href="#salary" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">Salary</a>
+              <a href="#rules" className="px-4 py-2 text-sm font-semibold text-gray-700 hover:text-orange-600 hover:bg-orange-50 rounded-xl transition-all duration-300">Rules</a>
+              <a href="#contact" className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-700 hover:to-orange-700 rounded-xl transition-all duration-300 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40">Contact</a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -160,13 +160,13 @@ const Home = () => {
           {mobileMenuOpen && (
             <div className="md:hidden py-4 border-t border-gray-100" data-testid="mobile-menu">
               <div className="flex flex-col space-y-2">
-                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">Home</a>
-                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">About</a>
-                <a href="#tilo-agency" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">Tilo Agency</a>
-                <a href="#tilo-streamer" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">Tilo Streamer</a>
-                <a href="#salary" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">Salary</a>
-                <a href="#rules" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-purple-50 hover:text-purple-600 rounded-xl transition-all">Rules</a>
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl text-center">Contact</a>
+                <a href="#home" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">Home</a>
+                <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">About</a>
+                <a href="#tilo-agency" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">Tilo Agency</a>
+                <a href="#tilo-streamer" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">Tilo Streamer</a>
+                <a href="#salary" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">Salary</a>
+                <a href="#rules" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-xl transition-all">Rules</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 text-sm font-semibold text-white bg-gradient-to-r from-orange-600 to-orange-600 rounded-xl text-center">Contact</a>
               </div>
             </div>
           )}
@@ -218,10 +218,10 @@ const Home = () => {
             
             {/* Salary Sheet Table - Modern Design */}
             <div className="relative animate-float">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-3xl blur-2xl opacity-20"></div>
+              <div className="absolute -inset-4 bg-gradient-to-r from-orange-600 to-orange-600 rounded-3xl blur-2xl opacity-20"></div>
               <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-600 rounded-2xl flex items-center justify-center">
                     <Gem className="text-white" size={24} />
                   </div>
                   <div>
@@ -234,22 +234,22 @@ const Home = () => {
                 <div className="overflow-hidden rounded-2xl border border-gray-100">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-gradient-to-r from-purple-600 to-indigo-600">
+                      <tr className="bg-gradient-to-r from-orange-600 to-orange-600">
                         <th className="text-left py-4 px-4 font-semibold text-white text-sm">Coins Target</th>
                         <th className="text-right py-4 px-4 font-semibold text-white text-sm">Payout (INR)</th>
                       </tr>
                     </thead>
                     <tbody>
                       {salarySheet.slice(0, 5).map((row, index) => (
-                        <tr key={index} className="border-t border-gray-100 hover:bg-gradient-to-r hover:from-purple-50 hover:to-indigo-50 transition-all duration-300">
+                        <tr key={index} className="border-t border-gray-100 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-50 transition-all duration-300">
                           <td className="py-4 px-4 text-gray-700 font-medium">{row.coins.toLocaleString()}</td>
-                          <td className="text-right py-4 px-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">₹ {row.rupees.toLocaleString()}</td>
+                          <td className="text-right py-4 px-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-600">₹ {row.rupees.toLocaleString()}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <a href="#salary" className="mt-4 text-sm font-semibold text-purple-600 hover:text-purple-700 flex items-center gap-2 group">
+                <a href="#salary" className="mt-4 text-sm font-semibold text-orange-600 hover:text-orange-700 flex items-center gap-2 group">
                   View complete salary structure
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -305,7 +305,7 @@ const Home = () => {
                     <p className="text-gray-600 text-sm">Agencies</p>
                   </div>
                   <div className="bg-white rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-purple-500 mb-2">24/7</div>
+                    <div className="text-3xl font-bold text-orange-500 mb-2">24/7</div>
                     <p className="text-gray-600 text-sm">Support</p>
                   </div>
                   <div className="bg-white rounded-xl p-6 text-center">
@@ -418,7 +418,7 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div className="relative order-2 md:order-1">
-              <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-8 shadow-2xl">
+              <div className="bg-gradient-to-br from-orange-100 to-pink-100 rounded-3xl p-8 shadow-2xl">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_tilo-rebrand/artifacts/07tlhj0c_Phone%20Screens.png" 
                   alt="Tilo Live App Screens" 
@@ -447,7 +447,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Gift className="text-purple-500 flex-shrink-0 mt-1" size={20} />
+                  <Gift className="text-orange-500 flex-shrink-0 mt-1" size={20} />
                   <div>
                     <h5 className="font-semibold text-gray-900 mb-1">Receive Gifts</h5>
                     <p className="text-sm text-gray-600">Get virtual gifts from fans and convert them to real cash</p>
@@ -491,8 +491,8 @@ const Home = () => {
                 <p className="text-sm text-gray-600">One-on-one video calls with premium earnings</p>
               </div>
               <div className="bg-white rounded-xl p-6 text-center">
-                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Gift className="text-purple-600" size={28} />
+                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Gift className="text-orange-600" size={28} />
                 </div>
                 <h4 className="font-bold text-gray-900 mb-2">Virtual Gifting</h4>
                 <p className="text-sm text-gray-600">Receive and convert gifts to diamonds instantly</p>
@@ -576,13 +576,13 @@ const Home = () => {
           {/* Agency Salary Table */}
           <div className="mb-12">
             <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center gap-2">
-              <TrendingUp className="text-purple-500" size={28} />
+              <TrendingUp className="text-orange-500" size={28} />
               Agency Salary
             </h3>
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-purple-500">
+                  <tr className="border-b-2 border-orange-500">
                     <th className="text-left py-3 px-4 font-semibold text-gray-900">Host Total Salary (USD)</th>
                     <th className="text-center py-3 px-4 font-semibold text-gray-900">Agent Share</th>
                     <th className="text-right py-3 px-4 font-semibold text-gray-900">Agent Bonus (USD)</th>
@@ -590,9 +590,9 @@ const Home = () => {
                 </thead>
                 <tbody>
                   {agencySalary.map((row, index) => (
-                    <tr key={index} className="border-b border-gray-200 hover:bg-purple-50 transition-colors">
+                    <tr key={index} className="border-b border-gray-200 hover:bg-orange-50 transition-colors">
                       <td className="py-3 px-4 text-gray-700">{row.total}</td>
-                      <td className="text-center py-3 px-4 font-semibold text-purple-600">{row.share}</td>
+                      <td className="text-center py-3 px-4 font-semibold text-orange-600">{row.share}</td>
                       <td className="text-right py-3 px-4 text-gray-700">{row.bonus === '-' ? '-' : `$${row.bonus}`}</td>
                     </tr>
                   ))}
@@ -687,8 +687,8 @@ const Home = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-              <div className="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Gift className="text-purple-600" size={36} />
+              <div className="bg-orange-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Gift className="text-orange-600" size={36} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">Virtual Gifts</h3>
               <p className="text-gray-600">Receive gifts during calls to boost your diamond count instantly</p>
@@ -928,10 +928,10 @@ const Home = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <div className="space-y-2">
-                <a href="#home" className="block text-gray-400 hover:text-purple-400 transition-colors text-sm">Home</a>
-                <a href="#about" className="block text-gray-400 hover:text-purple-400 transition-colors text-sm">About Us</a>
-                <a href="#tilo-agency" className="block text-gray-400 hover:text-purple-400 transition-colors text-sm">Tilo Agency</a>
-                <a href="#tilo-streamer" className="block text-gray-400 hover:text-purple-400 transition-colors text-sm">Tilo Streamer</a>
+                <a href="#home" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">Home</a>
+                <a href="#about" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">About Us</a>
+                <a href="#tilo-agency" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">Tilo Agency</a>
+                <a href="#tilo-streamer" className="block text-gray-400 hover:text-orange-400 transition-colors text-sm">Tilo Streamer</a>
               </div>
             </div>
             <div>
@@ -951,7 +951,7 @@ const Home = () => {
           </div>
           <div className="text-center border-t border-gray-800 pt-8 space-y-2">
             <p className="text-gray-400 text-sm">
-              Developed & Maintained By <a href="https://usafe.in" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 font-semibold">Urbanesafe LLP</a>
+              Developed & Maintained By <a href="https://usafe.in" target="_blank" rel="noopener noreferrer" className="text-orange-400 hover:text-orange-300 font-semibold">Urbanesafe LLP</a>
             </p>
             <p className="text-gray-400 text-sm">
               &copy; {currentYear} {companyName}. All rights reserved.
