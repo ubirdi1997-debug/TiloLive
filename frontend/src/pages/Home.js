@@ -178,37 +178,37 @@ const Home = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200">
-                <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-                <span className="text-sm font-semibold text-purple-700">Welcome to Tilo Live</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full border border-orange-200">
+                <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
+                <span className="text-sm font-semibold text-orange-700">Official Agency Partner</span>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }} data-testid="hero-headline">
-                Join Tilo Live and <span className="text-gradient">Start Earning</span> Today
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }} data-testid="hero-headline">
+                {settings?.heroHeadline || 'Partner with Tilo Agency and <span className="text-gradient">Maximize Your Earnings</span>'}
               </h1>
               <p className="text-lg sm:text-xl text-gray-600 leading-relaxed" data-testid="hero-subheadline">
-                Become a Host or Agent and unlock flexible payouts, exclusive rewards, and professional growth opportunities.
+                {settings?.heroSubheadline || 'Join India\'s fastest-growing live streaming agency. Recruit hosts, build your team, and earn substantial commissions with transparent payouts.'}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20a%20Host%20at%20Tilo%20Live`}
+                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=I%20want%20to%20become%20a%20Tilo%20Agency%20Partner`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary inline-flex items-center justify-center gap-2 text-center group"
                   data-testid="cta-host-button"
                 >
-                  I'm a Host
+                  Become an Agent
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
                 <a
-                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20an%20Agent%20at%20Tilo%20Live`}
+                  href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=I%20want%20to%20join%20as%20a%20Host%20under%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline inline-flex items-center justify-center gap-2 text-center group"
                   data-testid="cta-agent-button"
                 >
-                  I'm an Agent
+                  Join as Host
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
