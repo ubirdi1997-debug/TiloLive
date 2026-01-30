@@ -521,29 +521,41 @@ const Home = () => {
           </div>
 
           {/* App Features */}
-          <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-3xl p-8 sm:p-12">
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Tilo App Features</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="bg-white rounded-xl p-6 text-center">
-                <div className="bg-sky-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Video className="text-sky-600" size={28} />
+          <div className="relative mt-16">
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-100 via-orange-50 to-orange-100 rounded-3xl blur-2xl opacity-50"></div>
+            <div className="relative bg-gradient-to-br from-orange-50/80 to-white rounded-3xl p-10 sm:p-14 border-2 border-orange-200 shadow-2xl">
+              <h3 className="text-3xl font-black text-center mb-12 text-gray-900">🎯 Tilo App Features</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-orange-300">
+                  <div className="relative mb-6 inline-block">
+                    <div className="absolute inset-0 bg-sky-400 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-sky-400 to-sky-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                      <Video className="text-white" size={32} />
+                    </div>
+                  </div>
+                  <h4 className="font-black text-gray-900 mb-3 text-xl">Live Streaming</h4>
+                  <p className="text-gray-600 leading-relaxed">High-quality video streaming with real-time interaction</p>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">Live Streaming</h4>
-                <p className="text-sm text-gray-600">High-quality video streaming with real-time interaction</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 text-center">
-                <div className="bg-cyan-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <MessageCircle className="text-cyan-600" size={28} />
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-orange-300">
+                  <div className="relative mb-6 inline-block">
+                    <div className="absolute inset-0 bg-cyan-400 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-cyan-400 to-cyan-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                      <MessageCircle className="text-white" size={32} />
+                    </div>
+                  </div>
+                  <h4 className="font-black text-gray-900 mb-3 text-xl">Private Calls</h4>
+                  <p className="text-gray-600 leading-relaxed">One-on-one video calls with premium earnings</p>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">Private Calls</h4>
-                <p className="text-sm text-gray-600">One-on-one video calls with premium earnings</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 text-center">
-                <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Gift className="text-orange-600" size={28} />
+                <div className="group bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-transparent hover:border-orange-300">
+                  <div className="relative mb-6 inline-block">
+                    <div className="absolute inset-0 bg-orange-400 rounded-2xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                    <div className="relative bg-gradient-to-br from-orange-400 to-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto shadow-xl">
+                      <Gift className="text-white" size={32} />
+                    </div>
+                  </div>
+                  <h4 className="font-black text-gray-900 mb-3 text-xl">Virtual Gifting</h4>
+                  <p className="text-gray-600 leading-relaxed">Receive and convert gifts to diamonds instantly</p>
                 </div>
-                <h4 className="font-bold text-gray-900 mb-2">Virtual Gifting</h4>
-                <p className="text-sm text-gray-600">Receive and convert gifts to diamonds instantly</p>
               </div>
             </div>
           </div>
