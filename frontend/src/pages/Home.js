@@ -174,18 +174,33 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="hero-gradient pt-32 pb-20 px-4 relative overflow-hidden" data-testid="hero-section">
+      <section id="home" className="relative pt-32 pb-20 px-4 overflow-hidden" data-testid="hero-section" style={{background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 50%, #ffffff 100%)'}}>
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 fade-in">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 rounded-full border border-orange-200">
-                <span className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></span>
-                <span className="text-sm font-semibold text-orange-700">Welcome to Tilo Agency</span>
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border-2 border-orange-200 shadow-lg">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-500"></span>
+                </span>
+                <span className="text-sm font-bold text-orange-700">Welcome to Tilo Agency</span>
               </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }} data-testid="hero-headline">
-                Join Tilo Agency and <span className="text-gradient">Start Earning</span> Today
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 leading-tight" style={{ fontFamily: 'Outfit, sans-serif' }} data-testid="hero-headline">
+                Join Tilo Agency and <span className="text-gradient relative inline-block">
+                  Start Earning
+                  <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 10C50 3 150 3 198 10" stroke="#f97316" strokeWidth="3" strokeLinecap="round"/>
+                  </svg>
+                </span> Today
               </h1>
-              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed" data-testid="hero-subheadline">
+              <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-medium" data-testid="hero-subheadline">
                 Become a Host or Agent and unlock flexible payouts, exclusive rewards, and professional growth opportunities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -193,19 +208,20 @@ const Home = () => {
                   href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20a%20Host%20at%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary inline-flex items-center justify-center gap-2 text-center group"
+                  className="group relative inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 hover:-translate-y-1"
                   data-testid="cta-host-button"
                 >
-                  I'm a Host
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="relative z-10">I'm a Host</span>
+                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
+                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </a>
                 <a
                   href={`https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=Hello,%20I%20want%20to%20be%20an%20Agent%20at%20Tilo%20Agency`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-outline inline-flex items-center justify-center gap-2 text-center group"
+                  className="group inline-flex items-center justify-center gap-2 px-8 py-4 font-bold text-orange-600 bg-white border-3 border-orange-500 rounded-2xl shadow-lg hover:bg-orange-50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
                   data-testid="cta-agent-button"
                 >
                   I'm an Agent
@@ -216,43 +232,50 @@ const Home = () => {
               </div>
             </div>
             
-            {/* Salary Sheet Table - Modern Design */}
-            <div className="relative animate-float">
-              <div className="absolute -inset-4 bg-gradient-to-r from-orange-600 to-orange-600 rounded-3xl blur-2xl opacity-20"></div>
-              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-600 to-orange-600 rounded-2xl flex items-center justify-center">
-                    <Gem className="text-white" size={24} />
+            {/* Enhanced Salary Sheet Card */}
+            <div className="relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 rounded-3xl blur-2xl opacity-30 group-hover:opacity-40 transition duration-1000"></div>
+              <div className="relative bg-white rounded-3xl p-8 shadow-2xl border-2 border-orange-100 hover:border-orange-300 transition-all duration-300 transform hover:scale-[1.02]">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-orange-400 rounded-2xl blur-md opacity-50"></div>
+                    <div className="relative w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+                      <Gem className="text-white" size={28} />
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Outfit, sans-serif' }}>
+                    <h3 className="text-2xl font-black text-gray-900" style={{ fontFamily: 'Outfit, sans-serif' }}>
                       Official Salary Sheet
                     </h3>
-                    <p className="text-sm text-gray-500">Transparent earnings structure</p>
+                    <p className="text-sm text-gray-500 font-semibold">Transparent earnings structure</p>
                   </div>
                 </div>
-                <div className="overflow-hidden rounded-2xl border border-gray-100">
+                <div className="overflow-hidden rounded-2xl border-2 border-orange-200 shadow-inner">
                   <table className="w-full">
                     <thead>
-                      <tr className="bg-gradient-to-r from-orange-600 to-orange-600">
-                        <th className="text-left py-4 px-4 font-semibold text-white text-sm">Coins Target</th>
-                        <th className="text-right py-4 px-4 font-semibold text-white text-sm">Payout (INR)</th>
+                      <tr className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500">
+                        <th className="text-left py-4 px-5 font-bold text-white text-sm tracking-wide">COINS TARGET</th>
+                        <th className="text-right py-4 px-5 font-bold text-white text-sm tracking-wide">PAYOUT (INR)</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-gradient-to-b from-orange-50/30 to-white">
                       {salarySheet.slice(0, 5).map((row, index) => (
-                        <tr key={index} className="border-t border-gray-100 hover:bg-gradient-to-r hover:from-orange-50 hover:to-orange-50 transition-all duration-300">
-                          <td className="py-4 px-4 text-gray-700 font-medium">{row.coins.toLocaleString()}</td>
-                          <td className="text-right py-4 px-4 font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-600">₹ {row.rupees.toLocaleString()}</td>
+                        <tr key={index} className="border-t-2 border-orange-100 hover:bg-orange-100/50 transition-all duration-200 group">
+                          <td className="py-4 px-5 text-gray-800 font-bold text-base">{row.coins.toLocaleString()}</td>
+                          <td className="text-right py-4 px-5 font-black text-lg">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-orange-500 group-hover:from-orange-500 group-hover:to-orange-600">
+                              ₹ {row.rupees.toLocaleString()}
+                            </span>
+                          </td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
-                <a href="#salary" className="mt-4 text-sm font-semibold text-orange-600 hover:text-orange-700 flex items-center gap-2 group">
+                <a href="#salary" className="mt-5 text-sm font-bold text-orange-600 hover:text-orange-700 flex items-center gap-2 group px-4 py-2 hover:bg-orange-50 rounded-xl transition-all">
                   View complete salary structure
-                  <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <svg className="w-4 h-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
               </div>
