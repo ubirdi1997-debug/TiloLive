@@ -346,19 +346,19 @@ const Home = () => {
                 <div className="grid grid-cols-2 gap-6">
                   <div className="group bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-orange-100 hover:border-orange-300">
                     <div className="text-4xl font-black bg-gradient-to-br from-orange-500 to-orange-600 bg-clip-text text-transparent mb-2">10K+</div>
-                    <p className="text-gray-600 text-sm">Active Hosts</p>
+                    <p className="text-gray-600 text-sm font-semibold">Active Hosts</p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-cyan-500 mb-2">500+</div>
-                    <p className="text-gray-600 text-sm">Agencies</p>
+                  <div className="group bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-orange-100 hover:border-orange-300">
+                    <div className="text-4xl font-black bg-gradient-to-br from-cyan-500 to-blue-500 bg-clip-text text-transparent mb-2">500+</div>
+                    <p className="text-gray-600 text-sm font-semibold">Agencies</p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-orange-500 mb-2">24/7</div>
-                    <p className="text-gray-600 text-sm">Support</p>
+                  <div className="group bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-orange-100 hover:border-orange-300">
+                    <div className="text-4xl font-black bg-gradient-to-br from-orange-400 to-red-500 bg-clip-text text-transparent mb-2">24/7</div>
+                    <p className="text-gray-600 text-sm font-semibold">Support</p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 text-center">
-                    <div className="text-3xl font-bold text-green-500 mb-2">$1M+</div>
-                    <p className="text-gray-600 text-sm">Paid Out</p>
+                  <div className="group bg-white rounded-2xl p-6 text-center shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-orange-100 hover:border-orange-300">
+                    <div className="text-4xl font-black bg-gradient-to-br from-green-500 to-emerald-600 bg-clip-text text-transparent mb-2">$1M+</div>
+                    <p className="text-gray-600 text-sm font-semibold">Paid Out</p>
                   </div>
                 </div>
               </div>
