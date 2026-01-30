@@ -1,13 +1,13 @@
 {
   "settings": {
-    "siteTitle": "Tilo Live",
-    "heroHeadline": "Join Tilo Live and Start Earning Today",
-    "heroSubheadline": "Become a Host or Agent and unlock flexible payouts, exclusive rewards, and professional growth opportunities.",
-    "primaryColor": "#667eea",
-    "secondaryColor": "#764ba2",
-    "contactEmail": "info@tilolive.in",
+    "siteTitle": "Tilo Agency",
+    "heroHeadline": "Partner with Tilo Agency and Maximize Your Earnings",
+    "heroSubheadline": "Join India's fastest-growing live streaming agency. Recruit hosts, build your team, and earn substantial commissions with transparent payouts.",
+    "primaryColor": "#f97316",
+    "secondaryColor": "#ea580c",
+    "contactEmail": "support@tiloagency.com",
     "contactPhone": "+91 82669 41716",
-    "companyName": "Tilo Live",
+    "companyName": "Tilo Agency",
     "whatsappNumber": "+918266941716",
     "socialMedia": {
       "facebook": "",
@@ -15,8 +15,8 @@
       "twitter": "",
       "youtube": ""
     },
-    "headerLogo": null,
-    "footerLogo": null
+    "headerLogo": "https://customer-assets.emergentagent.com/job_tilo-rebrand/artifacts/apt27ol5_Firefly_Gemini%20Flash_ADD%20%20TEXT%20TO%20THE%20RIGHT%20TILO%20AGENCY%20422800.png",
+    "footerLogo": "https://customer-assets.emergentagent.com/job_tilo-rebrand/artifacts/apt27ol5_Firefly_Gemini%20Flash_ADD%20%20TEXT%20TO%20THE%20RIGHT%20TILO%20AGENCY%20422800.png"
   },
   "messages": [],
   "newsletters": []
