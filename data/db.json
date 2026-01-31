@@ -19,5 +19,6 @@
     "footerLogo": "https://customer-assets.emergentagent.com/job_tilo-live-sandbox/artifacts/zsq9w8bb_tiloagency%20logo.png"
   },
   "messages": [],
-  "newsletters": []
+  "newsletters": [],
+  "adminPasswordHash": "$2b$12$ryg7cU51NrNq4apKp37JyuIq5UoaX6/x5Q0A1HWdaYMWskJImvB0e"
 }
