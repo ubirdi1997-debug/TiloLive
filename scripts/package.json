@@ -1,0 +1,10 @@
+{
+  "name": "build-htaccess",
+  "version": "1.0.0",
+  "description": "Auto-generate .htaccess for React Router",
+  "main": "index.js",
+  "scripts": {
+    "generate-htaccess": "node scripts/generate-htaccess.js",
+    "postbuild": "npm run generate-htaccess"
+  }
+}
