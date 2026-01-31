@@ -8,12 +8,14 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import axios from 'axios';
 import { Trash2, Mail, Settings, Inbox, BarChart3, Edit, Check } from 'lucide-react';
+import { getBackendUrl } from '@/lib/utils';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = getBackendUrl();
 const API = `${BACKEND_URL}/api`;
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('');
   const [loading, setLoading] = useState(false);
@@ -64,7 +66,7 @@ const Admin = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${API}/admin/login`, { password });
+      const response = await axios.post(`${API}/admin/login`, { username, password });
       if (response.data.success) {
         setToken(response.data.token);
         setIsLoggedIn(true);
@@ -189,6 +191,19 @@ const Admin = () => {
             <p className="text-gray-600">Enter your password to access the admin panel</p>
           </div>
           <form onSubmit={handleLogin} data-testid="admin-login-form">
+            <div className="mb-6">
+              <Label htmlFor="username" className="text-gray-700 font-semibold">Username</Label>
+              <Input
+                id="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="mt-2"
+                placeholder="Enter admin username"
+                required
+                data-testid="admin-username-input"
+              />
+            </div>
             <div className="mb-6">
               <Label htmlFor="password" className="text-gray-700 font-semibold">Password</Label>
               <Input

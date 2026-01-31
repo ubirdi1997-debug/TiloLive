@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { MessageSquare, Gem, TrendingUp, Shield, Mail, Video, MessageCircle, Gift, Clock, CheckCircle, XCircle, AlertTriangle, Users } from 'lucide-react';
 import { toast } from 'sonner';
 import axios from 'axios';
+import { getBackendUrl } from '@/lib/utils';
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +10,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = getBackendUrl();
 const API = `${BACKEND_URL}/api`;
 
 const Home = () => {

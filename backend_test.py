@@ -64,10 +64,10 @@ class TiloLiveAPITester:
             self.log_result("Public Settings", False, None, str(e))
             return False
 
-    def test_admin_login(self, password="admin123"):
+    def test_admin_login(self, username="admin", password="admin123"):
         """Test admin login"""
         try:
-            payload = {"password": password}
+            payload = {"username": username, "password": password}
             response = requests.post(f"{self.api_url}/admin/login", json=payload, timeout=10)
             success = response.status_code == 200
             data = response.json() if success else None

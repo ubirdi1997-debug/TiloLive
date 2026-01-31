@@ -20,5 +20,6 @@
   },
   "messages": [],
   "newsletters": [],
-  "adminPasswordHash": "$2b$12$pEkT4CWa1gB9RPrGSdCKpOU7mtQK9wmHBRKR49WxqGqhXQwf1eaQ6"
+  "adminUsername": "admin",
+  "adminPasswordHash": ""
 }

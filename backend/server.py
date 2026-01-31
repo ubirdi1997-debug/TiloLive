@@ -19,8 +19,9 @@ import shutil
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-DB_FILE = Path('/app/data/db.json')
-UPLOADS_DIR = Path('/app/frontend/public/uploads')
+PROJECT_ROOT = ROOT_DIR.parent
+DB_FILE = PROJECT_ROOT / 'data' / 'db.json'
+UPLOADS_DIR = PROJECT_ROOT / 'frontend' / 'public' / 'uploads'
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
 security = HTTPBearer()
@@ -29,6 +30,16 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 def read_db():
+    if not DB_FILE.exists():
+        DB_FILE.parent.mkdir(parents=True, exist_ok=True)
+        default_data = {
+            "settings": {},
+            "messages": [],
+            "newsletters": [],
+        }
+        with open(DB_FILE, 'w') as f:
+            json.dump(default_data, f, indent=2)
+        return default_data
     with open(DB_FILE, 'r') as f:
         return json.load(f)
 
@@ -43,6 +54,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
 class AdminLogin(BaseModel):
+    username: str
     password: str
 
 class AdminLoginResponse(BaseModel):
@@ -98,14 +110,21 @@ def verify_admin_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 @api_router.post("/admin/login", response_model=AdminLoginResponse)
 async def admin_login(login: AdminLogin):
     db = read_db()
+    stored_username = db.get('adminUsername')
     stored_hash = db.get('adminPasswordHash')
     
-    if not stored_hash:
-        # First time - create hash from env password
+    if not stored_username or not stored_hash:
+        # First time - create credentials from env
+        admin_username = os.environ.get('ADMIN_USERNAME', 'admin')
         admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
+        stored_username = admin_username
         stored_hash = hash_password(admin_password)
+        db['adminUsername'] = stored_username
         db['adminPasswordHash'] = stored_hash
         write_db(db)
+
+    if login.username != stored_username:
+        raise HTTPException(status_code=401, detail="Invalid username")
     
     if verify_password(login.password, stored_hash):
         return AdminLoginResponse(success=True, token="admin-token-tilolive")
