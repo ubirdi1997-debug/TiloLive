@@ -69,10 +69,11 @@ const Admin = () => {
         setToken(response.data.token);
         setIsLoggedIn(true);
         toast.success('Login successful!');
-        fetchAdminData(response.data.token);
+        await fetchAdminData(response.data.token);
       }
     } catch (error) {
-      toast.error('Invalid password');
+      console.error('Login error:', error);
+      toast.error(error.response?.data?.detail || 'Invalid password');
     } finally {
       setLoading(false);
     }
@@ -97,6 +98,7 @@ const Admin = () => {
       setSmtpSettings(smtpRes.data);
     } catch (error) {
       console.error('Error fetching admin data:', error);
+      toast.error('Failed to load admin data');
     }
   };
 
