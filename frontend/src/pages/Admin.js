@@ -14,6 +14,7 @@ const API = `${BACKEND_URL}/api`;
 
 const Admin = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('');
   const [loading, setLoading] = useState(false);
@@ -64,7 +65,7 @@ const Admin = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${API}/admin/login`, { password });
+      const response = await axios.post(`${API}/admin/login`, { username, password });
       if (response.data.success) {
         setToken(response.data.token);
         setIsLoggedIn(true);
@@ -73,7 +74,7 @@ const Admin = () => {
       }
     } catch (error) {
       console.error('Login error:', error);
-      toast.error(error.response?.data?.detail || 'Invalid password');
+      toast.error(error.response?.data?.detail || 'Invalid username or password');
     } finally {
       setLoading(false);
     }
@@ -92,10 +93,33 @@ const Admin = () => {
         axios.get(`${API}/admin/smtp-settings`, config),
       ]);
 
-      setSettings(settingsRes.data);
-      setMessages(messagesRes.data);
-      setNewsletters(newslettersRes.data);
-      setSmtpSettings(smtpRes.data);
+      setSettings(settingsRes.data || {
+        siteTitle: '',
+        heroHeadline: '',
+        heroSubheadline: '',
+        primaryColor: '',
+        secondaryColor: '',
+        contactEmail: '',
+        contactPhone: '',
+        companyName: '',
+        whatsappNumber: '',
+        socialMedia: {
+          facebook: '',
+          instagram: '',
+          twitter: '',
+          youtube: ''
+        }
+      });
+      setMessages(messagesRes.data || []);
+      setNewsletters(newslettersRes.data || []);
+      setSmtpSettings(smtpRes.data || {
+        host: '',
+        port: 587,
+        username: '',
+        password: '',
+        from_email: '',
+        from_name: ''
+      });
     } catch (error) {
       console.error('Error fetching admin data:', error);
       toast.error('Failed to load admin data');
@@ -191,6 +215,19 @@ const Admin = () => {
             <p className="text-gray-600">Enter your password to access the admin panel</p>
           </div>
           <form onSubmit={handleLogin} data-testid="admin-login-form">
+            <div className="mb-4">
+              <Label htmlFor="username" className="text-gray-700 font-semibold">Username</Label>
+              <Input
+                id="username"
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="mt-2"
+                placeholder="Enter admin username"
+                required
+                data-testid="admin-username-input"
+              />
+            </div>
             <div className="mb-6">
               <Label htmlFor="password" className="text-gray-700 font-semibold">Password</Label>
               <Input

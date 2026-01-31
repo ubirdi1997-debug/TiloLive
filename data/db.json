@@ -1,4 +1,8 @@
 {
+  "adminCredentials": {
+    "username": "admin",
+    "passwordHash": "$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYIq.ZQrGOe"
+  },
   "settings": {
     "siteTitle": "Tilo Live",
     "heroHeadline": "Join Tilo Live and Start Earning Today",
@@ -19,5 +23,13 @@
     "footerLogo": null
   },
   "messages": [],
-  "newsletters": []
+  "newsletters": [],
+  "smtpSettings": {
+    "host": "",
+    "port": 587,
+    "username": "",
+    "password": "",
+    "from_email": "",
+    "from_name": ""
+  }
 }

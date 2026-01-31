@@ -19,8 +19,9 @@ import shutil
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-DB_FILE = Path('/app/data/db.json')
-UPLOADS_DIR = Path('/app/frontend/public/uploads')
+# Use relative path from backend directory to data directory
+DB_FILE = ROOT_DIR.parent / 'data' / 'db.json'
+UPLOADS_DIR = ROOT_DIR.parent / 'frontend' / 'public' / 'uploads'
 UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
 security = HTTPBearer()
@@ -29,10 +30,42 @@ app = FastAPI()
 api_router = APIRouter(prefix="/api")
 
 def read_db():
-    with open(DB_FILE, 'r') as f:
-        return json.load(f)
+    try:
+        if not DB_FILE.exists():
+            # Create default db structure if file doesn't exist
+            default_db = {
+                "adminCredentials": {
+                    "username": "admin",
+                    "passwordHash": "$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYIq.ZQrGOe"
+                },
+                "settings": {},
+                "messages": [],
+                "newsletters": [],
+                "smtpSettings": {}
+            }
+            DB_FILE.parent.mkdir(parents=True, exist_ok=True)
+            write_db(default_db)
+            return default_db
+        
+        with open(DB_FILE, 'r') as f:
+            return json.load(f)
+    except json.JSONDecodeError:
+        # If JSON is corrupted, reset to default
+        default_db = {
+            "adminCredentials": {
+                "username": "admin",
+                "passwordHash": "$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYIq.ZQrGOe"
+            },
+            "settings": {},
+            "messages": [],
+            "newsletters": [],
+            "smtpSettings": {}
+        }
+        write_db(default_db)
+        return default_db
 
 def write_db(data):
+    DB_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(DB_FILE, 'w') as f:
         json.dump(data, f, indent=2)
 
@@ -43,6 +76,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return bcrypt.checkpw(plain_password.encode('utf-8'), hashed_password.encode('utf-8'))
 
 class AdminLogin(BaseModel):
+    username: str
     password: str
 
 class AdminLoginResponse(BaseModel):
@@ -98,34 +132,40 @@ def verify_admin_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 @api_router.post("/admin/login", response_model=AdminLoginResponse)
 async def admin_login(login: AdminLogin):
     db = read_db()
-    stored_hash = db.get('adminPasswordHash')
+    admin_credentials = db.get('adminCredentials')
     
-    if not stored_hash:
-        # First time - create hash from env password
+    if not admin_credentials:
+        # First time - create default admin credentials
+        admin_username = os.environ.get('ADMIN_USERNAME', 'admin')
         admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
-        stored_hash = hash_password(admin_password)
-        db['adminPasswordHash'] = stored_hash
+        admin_credentials = {
+            'username': admin_username,
+            'passwordHash': hash_password(admin_password)
+        }
+        db['adminCredentials'] = admin_credentials
         write_db(db)
     
-    if verify_password(login.password, stored_hash):
+    # Verify username and password
+    if (login.username == admin_credentials['username'] and 
+        verify_password(login.password, admin_credentials['passwordHash'])):
         return AdminLoginResponse(success=True, token="admin-token-tilolive")
-    raise HTTPException(status_code=401, detail="Invalid password")
+    raise HTTPException(status_code=401, detail="Invalid username or password")
 
 @api_router.post("/admin/change-password")
 async def change_password(data: PasswordChange, token: str = Depends(verify_admin_token)):
     db = read_db()
-    stored_hash = db.get('adminPasswordHash')
+    admin_credentials = db.get('adminCredentials')
     
-    if not stored_hash:
-        raise HTTPException(status_code=400, detail="Password not initialized")
+    if not admin_credentials:
+        raise HTTPException(status_code=400, detail="Admin credentials not initialized")
     
     # Verify old password
-    if not verify_password(data.oldPassword, stored_hash):
+    if not verify_password(data.oldPassword, admin_credentials['passwordHash']):
         raise HTTPException(status_code=400, detail="Current password is incorrect")
     
     # Hash and save new password
-    new_hash = hash_password(data.newPassword)
-    db['adminPasswordHash'] = new_hash
+    admin_credentials['passwordHash'] = hash_password(data.newPassword)
+    db['adminCredentials'] = admin_credentials
     write_db(db)
     
     return {"success": True, "message": "Password changed successfully"}
