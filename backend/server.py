@@ -131,25 +131,46 @@ def verify_admin_token(credentials: HTTPAuthorizationCredentials = Depends(secur
 
 @api_router.post("/admin/login", response_model=AdminLoginResponse)
 async def admin_login(login: AdminLogin):
-    db = read_db()
-    admin_credentials = db.get('adminCredentials')
-    
-    if not admin_credentials:
-        # First time - create default admin credentials
-        admin_username = os.environ.get('ADMIN_USERNAME', 'admin')
-        admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
-        admin_credentials = {
-            'username': admin_username,
-            'passwordHash': hash_password(admin_password)
-        }
-        db['adminCredentials'] = admin_credentials
-        write_db(db)
-    
-    # Verify username and password
-    if (login.username == admin_credentials['username'] and 
-        verify_password(login.password, admin_credentials['passwordHash'])):
-        return AdminLoginResponse(success=True, token="admin-token-tilolive")
-    raise HTTPException(status_code=401, detail="Invalid username or password")
+    try:
+        db = read_db()
+        admin_credentials = db.get('adminCredentials')
+        
+        # Debug logging
+        logger.info(f"Login attempt - Username received: '{login.username}'")
+        logger.info(f"Admin credentials in DB: {admin_credentials}")
+        
+        if not admin_credentials:
+            # First time - create default admin credentials
+            admin_username = os.environ.get('ADMIN_USERNAME', 'admin')
+            admin_password = os.environ.get('ADMIN_PASSWORD', 'admin123')
+            admin_credentials = {
+                'username': admin_username,
+                'password': admin_password
+            }
+            db['adminCredentials'] = admin_credentials
+            write_db(db)
+            logger.info(f"Created default credentials: {admin_credentials}")
+        
+        # Simple plain text comparison
+        stored_username = admin_credentials.get('username')
+        stored_password = admin_credentials.get('password') or admin_credentials.get('passwordHash')
+        
+        logger.info(f"Comparing: '{login.username}' == '{stored_username}' and password match")
+        
+        if login.username == stored_username and login.password == stored_password:
+            logger.info("Login successful!")
+            return AdminLoginResponse(success=True, token="admin-token-tilolive")
+        else:
+            logger.warning(f"Login failed - Username match: {login.username == stored_username}, Password match: {login.password == stored_password}")
+            raise HTTPException(
+                status_code=401, 
+                detail=f"Invalid credentials. Username in DB: '{stored_username}', Username provided: '{login.username}'"
+            )
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Login error: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Login error: {str(e)}")
 
 @api_router.post("/admin/change-password")
 async def change_password(data: PasswordChange, token: str = Depends(verify_admin_token)):

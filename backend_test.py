@@ -158,9 +158,9 @@ class TiloLiveAPITester:
                 "primaryColor": "#38bdf8",
                 "secondaryColor": "#0ea5e9",
                 "contactEmail": "test@tilolive.in",
-                "contactPhone": "+91 82669 41716",
+                "contactPhone": "+918132958338",
                 "footerText": "© 2025 Tilo Live Test",
-                "whatsappNumber": "+918266941716",
+                "whatsappNumber": "+918132958338",
                 "socialMedia": {
                     "facebook": "",
                     "instagram": "",

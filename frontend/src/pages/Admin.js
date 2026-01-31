@@ -18,6 +18,7 @@ const Admin = () => {
   const [password, setPassword] = useState('');
   const [token, setToken] = useState('');
   const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   // Settings State
   const [settings, setSettings] = useState({
@@ -64,8 +65,17 @@ const Admin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMsg('');
+    console.log('=== LOGIN ATTEMPT ===');
+    console.log('API Endpoint:', `${API}/admin/login`);
+    console.log('Username:', username);
+    console.log('Password:', password);
+    console.log('Backend URL:', BACKEND_URL);
+    
     try {
       const response = await axios.post(`${API}/admin/login`, { username, password });
+      console.log('Response:', response.data);
+      
       if (response.data.success) {
         setToken(response.data.token);
         setIsLoggedIn(true);
@@ -73,8 +83,19 @@ const Admin = () => {
         await fetchAdminData(response.data.token);
       }
     } catch (error) {
-      console.error('Login error:', error);
-      toast.error(error.response?.data?.detail || 'Invalid username or password');
+      console.error('=== LOGIN ERROR ===');
+      console.error('Full error:', error);
+      console.error('Response data:', error.response?.data);
+      console.error('Status code:', error.response?.status);
+      
+      const errorMsg = error.response?.data?.detail || error.message || 'Invalid username or password';
+      const fullError = `Endpoint: ${API}/admin/login\nStatus: ${error.response?.status || 'Network Error'}\nError: ${errorMsg}`;
+      
+      setErrorMsg(fullError);
+      toast.error(`Login Failed: ${errorMsg}`);
+      
+      // Show detailed error on screen
+      alert(`LOGIN ERROR:\n\n${fullError}\n\nCheck browser console for more details.`);
     } finally {
       setLoading(false);
     }
@@ -213,7 +234,18 @@ const Admin = () => {
           <div className="text-center mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Admin Login</h1>
             <p className="text-gray-600">Enter your password to access the admin panel</p>
+            <div className="mt-2 text-xs text-gray-400">
+              Backend: {BACKEND_URL}
+            </div>
           </div>
+          
+          {errorMsg && (
+            <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+              <h3 className="text-red-800 font-semibold mb-2">Login Error:</h3>
+              <pre className="text-xs text-red-600 whitespace-pre-wrap">{errorMsg}</pre>
+            </div>
+          )}
+          
           <form onSubmit={handleLogin} data-testid="admin-login-form">
             <div className="mb-4">
               <Label htmlFor="username" className="text-gray-700 font-semibold">Username</Label>
@@ -245,6 +277,12 @@ const Admin = () => {
               {loading ? 'Logging in...' : 'Login'}
             </Button>
           </form>
+          
+          <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-xs text-blue-800">
+            <strong>Default Credentials:</strong><br/>
+            Username: admin<br/>
+            Password: admin123
+          </div>
         </div>
       </div>
     );

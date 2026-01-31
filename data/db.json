@@ -1,7 +1,7 @@
 {
   "adminCredentials": {
     "username": "admin",
-    "passwordHash": "$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYIq.ZQrGOe"
+    "password": "admin123"
   },
   "settings": {
     "siteTitle": "Tilo Live",
@@ -10,9 +10,9 @@
     "primaryColor": "#667eea",
     "secondaryColor": "#764ba2",
     "contactEmail": "info@tilolive.in",
-    "contactPhone": "+91 82669 41716",
+    "contactPhone": "+918132958338",
     "companyName": "Tilo Live",
-    "whatsappNumber": "+918266941716",
+    "whatsappNumber": "+918132958338",
     "socialMedia": {
       "facebook": "",
       "instagram": "",

@@ -58,7 +58,7 @@ const Contact = () => {
               </div>
               <h3 className="font-bold text-gray-900 mb-2">WhatsApp</h3>
               <p className="text-gray-600 text-sm mb-3">Quick responses via WhatsApp</p>
-              <a href="https://wa.me/918266941716" className="text-sky-500 font-semibold hover:text-sky-600">+91 82669 41716</a>
+              <a href="https://wa.me/918132958338" className="text-sky-500 font-semibold hover:text-sky-600">+918132958338</a>
             </div>
 
             <div className="card-hover bg-white rounded-2xl p-6 border border-gray-200 shadow-sm text-center" data-testid="contact-info-email">
@@ -76,7 +76,7 @@ const Contact = () => {
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
               <p className="text-gray-600 text-sm mb-3">Give us a call</p>
-              <a href="tel:+918266941716" className="text-sky-500 font-semibold hover:text-sky-600">+91 82669 41716</a>
+              <a href="tel:+918132958338" className="text-sky-500 font-semibold hover:text-sky-600">+918132958338</a>
             </div>
           </div>
 

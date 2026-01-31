@@ -65,7 +65,7 @@ const Home = () => {
     }
   };
 
-  const whatsappNumber = settings?.whatsappNumber || '+918266941716';
+  const whatsappNumber = settings?.whatsappNumber || '+918132958338';
   const headerLogo = settings?.headerLogo || 'https://customer-assets.emergentagent.com/job_tilo-rebrand/artifacts/cd62r0gu_wbandxtqn5ktf3j6bzylmi1jnea-mv0p56qjkefznk1k-OT1NoOkggDJNZCyY.png';
   const footerLogo = settings?.footerLogo || 'https://customer-assets.emergentagent.com/job_tilo-rebrand/artifacts/cd62r0gu_wbandxtqn5ktf3j6bzylmi1jnea-mv0p56qjkefznk1k-OT1NoOkggDJNZCyY.png';
   const companyName = settings?.companyName || 'Tilo Live';
@@ -937,7 +937,7 @@ const Home = () => {
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact</h3>
               <p className="text-gray-400 text-sm mb-2">support@tilolive.in</p>
-              <p className="text-gray-400 text-sm mb-4">Phone: {settings?.contactPhone || '+91 82669 41716'}</p>
+              <p className="text-gray-400 text-sm mb-4">Phone: {settings?.contactPhone || '+918132958338'}</p>
               <a
                 href={`https://whatsapp.com/channel/0029VbCCYeQ2P59t8LBOSe1V`}
                 target="_blank"
